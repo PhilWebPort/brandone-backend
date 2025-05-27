@@ -8,9 +8,10 @@ const port = process.env.PORT || 3000;
 
 // Middleware
 app.use(cors({
-    origin: ['https://philwebport.github.io', 'http://localhost:3000'],
-    methods: ['GET', 'POST'],
-    credentials: true
+    origin: ['https://philwebport.github.io', 'http://localhost:3000', 'http://localhost:5500', 'http://127.0.0.1:5500'],
+    methods: ['GET', 'POST', 'OPTIONS'],
+    credentials: true,
+    allowedHeaders: ['Content-Type', 'Accept']
 }));
 app.use(express.json());
 
